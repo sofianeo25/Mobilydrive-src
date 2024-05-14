@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4" style="margin-top: 150px;">Votre devis en quelques clics - transfert de véhicules</h1>
+    <p class="service-description">Remplissez les informations ci-dessous pour obtenir une estimation rapide et précise du coût et de la consommation de carburant pour votre transport.</p>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        <div class="form-row">
+            {% for field in form %}
+            <div class="col-md-6 mb-3">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field|add_class:'form-control' }}
+                <div class="invalid-feedback">
+                    Veuillez remplir ce champ.
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="btn dento-btn" type="submit">Calculer <i class="fa fa-angle-double-right"></i></button>
+    </form>
+
+    {% if cout %}
+    <div class="results mt-4">
+        <h2>Notre estimation</h2>
+        <p class="service-description">Distance: <strong>{{ distance }} km</strong></p>
+        <p class="service-description">Consommation de carburant: <strong>{{ consommation|floatformat:2 }} litres</strong></p>
+        <p class="service-description">Prix: <strong>{{ prix|floatformat:2 }} euros</strong></p>
+
+        <!-- Formulaire de contact pour demander un chauffeur -->
+        <div class="contact-form mt-5 mb-5">
+            <h3>Entrez vos informations pour que nous puissions vous contacter :</h3>
+            <form action="{% url 'contact_view' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control" name="first_name" placeholder="Prénom" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="last_name" placeholder="Nom" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" name="phone" placeholder="Numéro de téléphone" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Entrez votre e-mail" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn dento-btn">Demander un chauffeur</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <p class="mt-4" style="margin-bottom: 200px;" >Veuillez entrer les détails du trajet pour obtenir une estimation.</p>
+    {% endif %}
+</div>
+{% endblock %}

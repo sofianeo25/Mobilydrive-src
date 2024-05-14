@@ -1,0 +1,57 @@
+<!-- devis.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <section class="devis">
+        <!-- Intégrer la carte TomTom ici -->
+        <div id="map" class="map" style="width: 100%; min-height: 400px;"></div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                let apiKey = 'V2SW3aCgrg9lFaJ0QoZdN5DpdJ1uBqDW';
+
+                var options = {
+                    center: [48.8566, 2.3522], // Coordonnées de Paris (latitude, longitude)
+                    zoom: 10,
+                    showSearchButton: false,
+                    searchOptions: {
+                        key: apiKey,
+                        language: "fr-FR"
+                    },
+                    autocompleteOptions: {
+                        key: apiKey,
+                        language: "fr-FR"
+                    },
+                    labels: {
+                        placeholder: "Entrez l'adresse de départ"
+                    }
+                };
+
+                var map = tt.map({
+                    key: apiKey,
+                    container: 'map',
+                    center: options.center, // Centrer la carte sur la position spécifiée
+                    zoom: options.zoom,
+                });
+
+                // Vous pouvez ajouter d'autres contrôles ou personnaliser la carte ici
+
+                map.addControl(new tt.FullscreenControl({
+                    container: document.getElementById('map')
+                }));
+                map.addControl(new tt.NavigationControl());
+
+                // Ajoutez le reste de votre code JavaScript ici
+            });
+        </script>
+
+
+        <!-- Formulaire de demande de devis -->
+        <form id="devisForm" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Demander un devis</button>
+        </form>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Votre devis en quelques clics</h1>
+    <p class="text-muted">Remplissez les informations ci-dessous pour obtenir une estimation rapide et précise du coût et de la consommation de carburant pour votre transport.</p>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field|add_class:'form-control' }}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn dento-btn">Calculer <i class="fa fa-angle-double-right"></i></button>
+    </form>
+
+    <!-- Ajout du conteneur de la carte si les données sont disponibles -->
+    {% if routeData %}
+    <div id="map" style="height: 400px;"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var map = L.map('map').setView([48.8566, 2.3522], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            var routeData = {{ routeData|safe }};
+            var route = L.geoJSON(routeData).addTo(map);
+            map.fitBounds(route.getBounds());
+        });
+    </script>
+    {% endif %}
+</div>
+{% endblock %}

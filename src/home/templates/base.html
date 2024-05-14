@@ -1,0 +1,192 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="{% block meta_description %}MobilyDrive - Transfert de véhicules avec chauffeur VTC. Faites confiance à MobilyDrive pour la livraison express de votre véhicule en France et en Europe. Demandez un devis en ligne dès maintenant et contactez-nous pour plus d'informations!{% endblock %}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>{% block title %}Mobility Drive{% endblock %}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="{% static 'website/img/core-img/favicon.ico' %}">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+
+  <!-- Icones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preload-content">
+      <div id="dento-load"></div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <!-- Top Content -->
+          <div class="col-6 col-md-9 col-lg-8">
+            <div class="top-header-content">
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title=" Dans toute la France"><i class="fa fa-map-marker"></i> <span>Dans toute la France</span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="contact@mobilitydrive.fr"><i class="fa fa-envelope"></i> <span>contact@mobilitydrive.fr</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top Header End -->
+
+    <!-- Main Header Start -->
+    <div class="main-header-area">
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container">
+          <!-- Classy Menu -->
+          <nav class="classy-navbar justify-content-between" id="dentoNav">
+
+            <!-- Logo -->
+            <a class="nav-brand" href="{% url 'home' %}"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
+
+            <!-- Navbar Toggler -->
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+
+            <!-- Menu -->
+            <div class="classy-menu">
+
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+
+              <!-- Nav Start -->
+              <div class="classynav">
+                <ul id="nav">
+                    <li><a href="{% url 'home' %}">Accueil</a></li>
+                    <li><a href="#about">A propos</a></li>
+                    <li><a href="#process">Nos services</a></li>
+                    <li><a href="#pricing">Prix</a></li>
+                    <li><a href="#contact">Contactez-nous</a></li>
+                </ul>
+              </div>
+              <!-- Nav End -->
+            </div>
+
+            <!-- Booking Now Button -->
+            <a href="{% url 'calcul_itineraire' %}" class="btn dento-btn booking-btn">Faire un devis</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+
+{% block content %}
+
+{% endblock %}
+
+
+
+<!-- ***** Footer Area Start ***** -->
+<footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/3.jpg' %});">
+  <div class="container">
+    <div class="row">
+      <!-- Single Footer Widget -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="single-footer-widget">
+          <a href="{% url 'home' %}" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt="Logo"></a>
+          <p>MobilyDrive offre un service fiable et économique de transfert de véhicules avec chauffeur en France, garantissant sécurité et confort à chaque trajet.</p>
+          <div class="footer-contact">
+            <p><i class="icon_pin"></i> Dans toute la France</p>
+            <p><i class="icon_phone"></i> +33 6 01 20 33 45</p>
+            <p><i class="icon_mail"></i> contact@mobilitydrive.fr</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Widgets... -->
+    </div>
+  </div>
+
+  <!-- Copywrite Area -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="copywrite-content">
+          <p>&copy; <script>document.write(new Date().getFullYear());</script> | Développé par <a href="https://sftech.fr" target="_blank">SFTECH.fr</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- ***** Footer Area End ***** -->
+
+
+  <!-- ******* All JS ******* -->
+  <!-- jQuery js -->
+  <script src="{% static 'website/js/jquery.min.js' %}"></script>
+  <!-- Popper js -->
+  <script src="{% static 'website/js/popper.min.js' %}"></script>
+  <!-- Bootstrap js -->
+  <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+  <!-- All js -->
+  <script src="{% static 'website/js/dento.bundle.js' %}"></script>
+  <!-- Active js -->
+  <script src="{% static 'website/js/default-assets/active.js' %}"></script>
+
+  <script>
+  // Exemple de script pour activer la validation Bootstrap
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      var forms = document.getElementsByClassName('needs-validation');
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  </script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+      var map = L.map('map').setView([48.8566, 2.3522], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '© OpenStreetMap'
+      }).addTo(map);
+
+      // Assurez-vous que la variable `routeData` est passée correctement du backend
+      {% if routeData %}
+      var routeData = {{ routeData|safe }};
+      var route = L.geoJSON(routeData).addTo(map);
+      map.fitBounds(route.getBounds());
+      {% endif %}
+  });
+  </script>
+
+
+
+</body>
+
+</html>

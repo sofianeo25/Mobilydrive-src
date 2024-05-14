@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ***** Welcome Area Start ***** -->
+<section id="welcome" class="welcome-area">
+    <!-- Welcome Slides -->
+    <div class="welcome-slides owl-carousel">
+        <!-- Single Welcome Slide -->
+        <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'websiteimg/bg-img/1.jpg' %});">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <!-- Welcome Text -->
+                        <div class="welcome-text text-center">
+                            <img src="{% static 'website/img/bg-img/logo.png' %}" alt="Mon Logo" class="img-fluid mb-4" style="width: 400px; display: inline-block;">
+                            <h2>Votre partenaire de confiance pour le transport de véhicules</h2>
+                            <p>Chez MobilyDrive, nous savons que la livraison de votre véhicule est une étape importante. C'est pourquoi nous sommes là pour vous offrir un service de qualité, fiable et transparent. Avec nous, votre véhicule est entre de bonnes mains, où que vous soyez en France.</p>
+                            <div class="welcome-btn-group">
+                                <a href="itineraire/" class="btn dento-btn mx-2">Obtenir un devis</a>
+                                <a href="#contact" class="btn dento-btn mx-2 active">Contactez nous</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Welcome Area End ***** -->
+
+
+<!-- ****** A propos Start ******* -->
+<section id="about" class="dento-about-us-area section-padding-100-0">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- About Us Thumbnail -->
+            <div class="col-12 col-md-6">
+                <div class="about-us-thumbnail mb-50">
+                    <img src="{% static 'website/img/bg-img/15.jpg' %}" alt="">
+                </div>
+            </div>
+            <!-- About Content -->
+            <div class="col-12 col-md-6">
+                <div class="about-us-content mb-50">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>Nos points forts</h2>
+                        <div class="line"></div>
+                    </div>
+
+                    <!-- Single Service Area -->
+                    <div class="single-service-area mt-30">
+                        <i class="fa fa-bolt fa-2x" style="color: #47b2e4; float: left; margin-right: 10px;"></i>
+                        <div style="overflow: hidden;">
+                            <h4>Livraison rapide</h4>
+                            <p class="service-description">Livraison express.</p>
+                        </div>
+                    </div>
+
+                    <!-- Single Service Area -->
+                    <div class="single-service-area mt-30">
+                        <i class="fa fa-eur fa-2x" style="color: #47b2e4; float: left; margin-right: 10px;"></i>
+                        <div style="overflow: hidden;">
+                            <h4>Des prix compétitifs</h4>
+                            <p class="service-description">Faite déplacer votre véhicule par nos professionnels à un prix réduit</p>
+                        </div>
+                    </div>
+
+                    <!-- Single Service Area -->
+                    <div class="single-service-area mt-30">
+                        <i class="fa fa-shield fa-2x" style="color: #47b2e4; float: left; margin-right: 10px;"></i>
+                        <div style="overflow: hidden;">
+                            <h4>Un service de qualité</h4>
+                            <p class="service-description">Nos chauffeurs sont expérimentés ce qui nous permet d’éviter toute déconvenue à nos clients.</p>
+                        </div>
+                    </div>
+
+                    <!-- Single Service Area -->
+                    <div class="single-service-area mt-30">
+                        <i class="fas fa-car fa-2x" style="color: #47b2e4; float: left; margin-right: 10px;"></i>
+                        <div style="overflow: hidden;">
+                            <h4>Un service professionel</h4>
+                            <p class="service-description">Nos chauffeurs sont expérimentés ce qui nous permet d’éviter toute déconvenue à nos clients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ****** A propos End ****** -->
+
+<!-- ***** Process Section Start ***** -->
+<section id="process" class="dento-about-us-area section-padding-100-0">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>Le transport/transfert de véhicules - Comment ça marche ?</h2>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process 1: Prise en charge du véhicule -->
+        <div class="row align-items-center">
+            <!-- About Us Thumbnail -->
+            <div class="col-12 col-md-6">
+                <div class="about-us-thumbnail mb-50">
+                    <img src="{% static 'website/img/bg-img/prise-en-charge.jpg' %}" alt="Prise en charge">
+                </div>
+            </div>
+            <!-- About Content -->
+            <div class="col-12 col-md-6">
+                <div class="comment-content mb-50">
+                    <h3>1) Prise en charge du véhicule</h3>
+                    <p class="comment-content">Le tour du véhicule et remplissage de l'état des lieux numériques géolocalisés.</p>
+                    <p class="comment-content">Transmission des documents de bord.</p>
+                    <p class="comment-content">Confiance des clés du véhicule : votre véhicule est entre de bonnes mains.</p>
+                    <p>Les frais suivants sont inclus dans le prix : essence, péage, assurance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process 2: Arrivée et finalisation -->
+        <div class="row align-items-center">
+            <!-- About Content -->
+            <div class="col-12 col-md-6">
+                <div class="comment-content mb-50">
+                    <h3>2) Arrivée et finalisation</h3>
+                    <p class="comment-content">Arrivé à destination, le chauffeur :</p>
+                    <p class="comment-content">Transmet la carte grise ou une copie.</p>
+                    <p class="comment-content">Fait le tour du véhicule et remplit la fiche état.</p>
+                    <p class="comment-content">Transmet les clés du véhicule.</p>
+                    <p>Le chauffeur rentre à son domicile par ses propres moyens (bus, train, etc.). Les frais de retour sont inclus dans le prix.</p>
+                </div>
+            </div>
+            <!-- About Us Thumbnail -->
+            <div class="col-12 col-md-6">
+                <div class="about-us-thumbnail mb-50">
+                    <img src="{% static 'website/img/bg-img/arrive.jpg' %}" alt="Arrivée">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Process Section End ***** -->
+
+<!-- Prestation Conciergerie Section -->
+<section id="conciergerie" class="dento-about-us-area section-padding-100-0">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>Prestation Conciergerie</h2>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conciergerie Content -->
+        <div class="row align-items-center">
+            <!-- Conciergerie Thumbnail -->
+            <div class="col-12 col-md-6">
+                <div class="about-us-thumbnail mb-50">
+                    <img src="{% static 'website/img/bg-img/conciergerie.jpg' %}" alt="Conciergerie">
+                </div>
+            </div>
+            <!-- Conciergerie Content -->
+            <div class="col-12 col-md-6">
+                <div class="comment-content mb-50">
+                    <h3>Prestation Conciergerie</h3>
+                    <p class="comment-content">Le service de parking ultime pour choyer votre précieuse voiture en toute sécurité ! Notre équipe dévouée vous offre un niveau de confort inégalé, prenant soin de votre véhicule comme si c'était le nôtre.</p>
+                        <br>
+                    <p class="comment-content">Grâce à notre parking hautement sécurisé, vous pouvez vous détendre l'esprit tranquille, sachant que votre voiture est entre de bonnes mains. Profitez de notre service exclusif qui combine fiabilité, professionnalisme et praticité.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Prestation Conciergerie Section End ***** -->
+
+<!-- Services VTC Section -->
+<section id="vtc" class="dento-about-us-area section-padding-100-0">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>Services VTC</h2>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VTC Content -->
+        <div class="row align-items-center">
+            <!-- VTC Content -->
+            <div class="col-12 col-md-6">
+                <div class="comment-content mb-50">
+                    <h3>Services VTC - Chauffeur privé</h3>
+                    <p class="comment-content">Profitez d'un service de transport personnalisé et de qualité. Nos chauffeurs professionnels vous assurent un trajet confortable, sûr et ponctuel, que ce soit pour vos déplacements professionnels ou vos sorties en ville. Réservez dès maintenant et laissez-nous vous conduire.</p>
+                </div>
+            </div>
+            <!-- VTC Thumbnail -->
+            <div class="col-12 col-md-6">
+                <div class="about-us-thumbnail mb-50">
+                    <img src="{% static 'website/img/bg-img/vtc.jpg' %}" alt="Services VTC">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Services VTC Section End ***** -->
+
+<!-- Location de voiture Section -->
+<section id="chauffeur-prive" class="dento-about-us-area section-padding-100-0">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>Location de voiture</h2>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location de voiture Content -->
+        <div class="row align-items-center">
+            <!-- Location de voiture Thumbnail -->
+            <div class="col-12 col-md-6">
+                <div class="about-us-thumbnail mb-50">
+                    <img src="{% static 'website/img/bg-img/location.jpg' %}" alt="Location">
+                </div>
+            </div>
+            <!-- Location de voiture Content -->
+            <div class="col-12 col-md-6">
+                <div class="comment-content mb-50">
+                    <h3>Location de voiture</h3>
+                    <p class="comment-content">Besoin d'une voiture pour vos voyages d'affaires, vos vacances ou simplement pour explorer de nouveaux horizons ? Nous avons ce qu'il vous faut. Chez Mobilydrive Rent, nous proposons une large sélection de véhicules récents, bien entretenus et adaptés à tous les besoins. Réservez dès maintenant votre voiture de location.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Location de voiture Section End ***** -->
+
+
+<!-- Faire un devis -->
+<section id="pricing" class="dento-pricing-table-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <!-- Section Heading -->
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>Nos prix</h2>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ajout d'un paragraphe d'information pour les devis en ligne -->
+        <div class="row">
+            <div class="col-12">
+                <p class="service-description">
+                    Vous souhaitez obtenir un devis personnalisé ? C'est possible en quelques clics grâce à notre service de devis en ligne.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bouton pour faire un devis -->
+        <div class="col-12">
+            <div class="more-btn text-center mt-50">
+                <a href="itineraire/" class="btn dento-btn">Estimer le prix de la course <i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>@
+<!-- End Faire un devis -->
+
+<!-- Formulaire de contact -->
+<section id="contact" class="contact-form-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>Contactez-nous</h2>
+                    <div class="line"></div>
+                </div>
+                <form action="{% url 'contact_us_view' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="first_name" placeholder="Prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="last_name" placeholder="Nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" name="phone" placeholder="Numéro de téléphone" required>
+                    </div>
+                    <div class="form-group">
+                    <select class="form-control" name="request_type" required>
+                            <option value="">Votre demande concerne</option>
+                            <option value="Transfert de véhicule">Transfert de véhicule</option>
+                            <option value="Conciergerie">Conciergerie</option>
+                            <option value="Service VTC">Service VTC</option>
+                            <option value="Location de voiture">Location de voiture</option>
+                            <option value="Autre">Autre</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" rows="4" placeholder="Votre message" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn dento-btn">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
